@@ -81,14 +81,14 @@ libmm-venc-inc      := bionic/libc/include
 libmm-venc-inc      += bionic/libstdc++/include
 libmm-venc-inc      += $(LOCAL_PATH)/inc
 libmm-venc-inc      += $(OMX_VIDEO_PATH)/vidc/common/inc
-libmm-venc-inc      += hardware/qcom/media/mm-core/inc
-libmm-venc-inc      += hardware/qcom/media/libstagefrighthw
-libmm-venc-inc      += hardware/qcom/display/libgralloc
-libmm-venc-inc      += frameworks/native/include/media/hardware
-libmm-venc-inc      += frameworks/native/include/media/openmax
-libmm-venc-inc      += hardware/qcom/media/libc2dcolorconvert
-libmm-venc-inc      += hardware/qcom/display/libcopybit
-libmm-venc-inc      += frameworks/av/include/media/stagefright
+libmm-venc-inc      += hardware/qcom/media-caf-msm8226/mm-core/inc
+libmm-venc-inc      += hardware/qcom/media-caf-msm8226/libstagefrighthw
+libmm-venc-inc      += hardware/qcom/display-caf-msm8226/libgralloc
+libmm-venc-inc      += frameworks/native-caf/include/media/hardware
+libmm-venc-inc      += frameworks/native-caf/include/media/openmax
+libmm-venc-inc      += hardware/qcom/media-caf-msm8226/libc2dcolorconvert
+libmm-venc-inc      += hardware/qcom/display-caf-msm8226/libcopybit
+libmm-venc-inc      += frameworks/av-caf/include/media/stagefright
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display/
 libmm-venc-inc      += $(venc-inc)
 
@@ -124,8 +124,8 @@ include $(CLEAR_VARS)
 mm-venc-test720p-inc            := $(TARGET_OUT_HEADERS)/mm-core
 mm-venc-test720p-inc            += $(LOCAL_PATH)/inc
 mm-venc-test720p-inc            += $(OMX_VIDEO_PATH)/vidc/common/inc
-mm-venc-test720p-inc            += hardware/qcom/media/mm-core/inc
-mm-venc-test720p-inc            += hardware/qcom/display/libgralloc
+mm-venc-test720p-inc            += hardware/qcom/media-caf-msm8226/mm-core/inc
+mm-venc-test720p-inc            += hardware/qcom/display-caf-msm8226/libgralloc
 mm-venc-test720p-inc            += $(venc-inc)
 
 LOCAL_MODULE                    := mm-venc-omx-test720p
@@ -150,13 +150,13 @@ include $(BUILD_EXECUTABLE)
 include $(CLEAR_VARS)
 
 venc-test-inc                   += $(LOCAL_PATH)/inc
-venc-test-inc                   += hardware/qcom/display/libgralloc
+venc-test-inc                   += hardware/qcom/display-caf-msm8226/libgralloc
 venc-test-inc                   += $(venc-inc)
 
 LOCAL_MODULE                    := mm-video-encdrv-test
 LOCAL_MODULE_TAGS               := optional
 LOCAL_C_INCLUDES                := $(venc-test-inc)
-LOCAL_C_INCLUDES                += hardware/qcom/media/mm-core/inc
+LOCAL_C_INCLUDES                += hardware/qcom/media-caf-msm8226/mm-core/inc
 
 LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_PRELINK_MODULE            := false
@@ -171,4 +171,3 @@ endif #BUILD_TINY_ANDROID
 # ---------------------------------------------------------------------------------
 # 					END
 # ---------------------------------------------------------------------------------
-
